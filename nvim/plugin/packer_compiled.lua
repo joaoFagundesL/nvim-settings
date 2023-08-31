@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
@@ -134,6 +139,11 @@ _G.packer_plugins = {
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -148,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["nabla.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nabla.nvim",
+    url = "https://github.com/jbyuki/nabla.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -191,6 +206,11 @@ _G.packer_plugins = {
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -211,6 +231,11 @@ _G.packer_plugins = {
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["transparent.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/transparent.nvim",
+    url = "https://github.com/xiyaowong/transparent.nvim"
+  },
   ["typescript.nvim"] = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/typescript.nvim",
@@ -220,11 +245,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-maximizer",
     url = "https://github.com/szw/vim-maximizer"
-  },
-  ["vim-nightfly-guicolors"] = {
-    loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
-    url = "https://github.com/bluz71/vim-nightfly-guicolors"
   },
   ["vim-surround"] = {
     loaded = true,

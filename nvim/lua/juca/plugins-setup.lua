@@ -26,18 +26,23 @@ if not status then
 	return
 end
 
+require("nabla").disable_virt()
+
 -- add list of plugins to install
 return packer.startup(function(use)
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	use("xiyaowong/transparent.nvim")
+
+	use("navarasu/onedark.nvim")
+
 	use("nvim-lua/plenary.nvim")
 
-	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+	use("ellisonleao/gruvbox.nvim") -- preferred colorscheme
 
 	--split window & navigation
 	use("christoomey/vim-tmux-navigator")
-
 	use("szw/vim-maximizer") --maximize and restore the current window
 
 	--essential plugins
@@ -49,6 +54,8 @@ return packer.startup(function(use)
 
 	-- file explorer
 	use("nvim-tree/nvim-tree.lua")
+
+	use("jbyuki/nabla.nvim")
 
 	--icons
 	use("kyazdani42/nvim-web-devicons")
@@ -107,6 +114,13 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+	-- install without yarn or npm
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()

@@ -12,8 +12,8 @@ keymap.set("n", "x", '"_x')
 keymap.set("n", "<leader>+", "<C-a>") -- increase number
 keymap.set("n", "<leader>-", "<C-x>") -- decrease number
 
-keymap.set("n", "<leader>sv", "<C-w>v") -- split horizontally 
-keymap.set("n", "<leader>sh", "<C-w>s") -- split vertically
+keymap.set("n", "<leader>sv", "<C-w>v") -- split vertically
+keymap.set("n", "<leader>sh", "<C-w>s") -- split horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split same width
 keymap.set("n", "<leader>sx", ":close<CR>") -- close split
 
