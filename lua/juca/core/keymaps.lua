@@ -22,7 +22,10 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to the next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 
---plugin keymaps
+-- gitsigns
+keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>")
+keymap.set("n", "<leader>gp", ":Gitsigns prev_hunk<CR>")
+keymap.set("n", "<leader>gn", ":Gitsigns next_hunk<CR>")
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
