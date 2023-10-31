@@ -41,6 +41,7 @@ return packer.startup(function(use)
 
 	use("ellisonleao/gruvbox.nvim") -- preferred colorscheme
 	use("EdenEast/nightfox.nvim") -- preferred colorscheme
+	use("NLKNguyen/papercolor-theme")
 
 	--split window & navigation
 	use("christoomey/vim-tmux-navigator")
