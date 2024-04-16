@@ -26,11 +26,20 @@ if not status then
 	return
 end
 
+require("flutter-tools").setup({}) -- use defaults
 require("nabla").disable_virt()
 -- add list of plugins to install
 return packer.startup(function(use)
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
+
+	use({
+		"akinsho/flutter-tools.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+	})
 
 	use("xiyaowong/transparent.nvim")
 
