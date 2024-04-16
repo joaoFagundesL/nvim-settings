@@ -27,7 +27,6 @@ if not status then
 end
 
 require("nabla").disable_virt()
-
 -- add list of plugins to install
 return packer.startup(function(use)
 	-- packer can manage itself
@@ -38,6 +37,8 @@ return packer.startup(function(use)
 	use("navarasu/onedark.nvim")
 
 	use("nvim-lua/plenary.nvim")
+
+	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 
 	use("ellisonleao/gruvbox.nvim") -- preferred colorscheme
 	use("EdenEast/nightfox.nvim") -- preferred colorscheme
