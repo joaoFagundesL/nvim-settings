@@ -1,8 +1,11 @@
 vim.g.mapleader = " "
 
 local keymap = vim.keymap
+-- local options = { noremap = true }
 
---general keymaps
+-- delete without copying
+-- keymap.set("n", "d", '"_d', options)
+
 keymap.set("i", "jk", "<ESC>")
 
 keymap.set("n", "<leader>nh", ":nohl<CR>") -- clear the search
@@ -35,7 +38,27 @@ keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
+keymap.set("n", "<leader>fw", "<cmd>Telescope lsp_workspace_diagnostics<cr>") -- find files within current working directory, respects .gitignore
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+
+keymap.set("n", "<leader>xx", function()
+	require("trouble").toggle()
+end)
+keymap.set("n", "<leader>xw", function()
+	require("trouble").toggle("workspace_diagnostics")
+end)
+keymap.set("n", "<leader>xd", function()
+	require("trouble").toggle("document_diagnostics")
+end)
+keymap.set("n", "<leader>xq", function()
+	require("trouble").toggle("quickfix")
+end)
+keymap.set("n", "<leader>xl", function()
+	require("trouble").toggle("loclist")
+end)
+keymap.set("n", "gR", function()
+	require("trouble").toggle("lsp_references")
+end)
