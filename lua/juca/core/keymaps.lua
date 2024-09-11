@@ -35,6 +35,6 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set(
 	"n",
 	"<leader>p",
-	": silent !bash /home/arch/personal/scripts/md-to-pdf.sh %<CR>",
+	":!bash /home/arch/personal/scripts/md-to-pdf.sh %<CR>",
 	{ desc = "Convert current file to PDF and open preview" }
 )
