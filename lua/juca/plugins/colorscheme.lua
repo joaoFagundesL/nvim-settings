@@ -1,12 +1,13 @@
 return {
 	{
-		-- "ellisonleao/gruvbox.nvim",
+		"ellisonleao/gruvbox.nvim",
 		-- "folke/tokyonight.nvim",
-		"fxn/vim-monochrome",
+		-- "fxn/vim-monochrome",
+		-- "bluz71/vim-moonfly-colors",
 		priority = 1000, -- make sure to load this before all the other start plugins
 
 		config = function()
-			vim.cmd([[colorscheme monochrome]])
+			vim.cmd([[colorscheme gruvbox]])
 		end,
 	},
 }

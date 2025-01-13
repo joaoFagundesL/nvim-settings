@@ -72,11 +72,14 @@ return {
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		-- (not in youtube nvim video)
+
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
+		local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+		local workspace_folder = "/home/juca/.local/share/eclipse/" .. project_name
 
 		mason_lspconfig.setup_handlers({
 			-- default handler for installed servers
@@ -140,10 +143,41 @@ return {
 					},
 				})
 			end,
+
 			["jdtls"] = function()
 				lspconfig["jdtls"].setup({
 					capabilities = capabilities,
 					filetypes = { "java" },
+					cmd = {
+						"java",
+						"-javaagent:/home/juca/.local/share/nvim/mason/packages/jdtls/lombok.jar", -- Lombok agent
+						"-Xbootclasspath/a:/home/juca/.local/share/nvim/mason/packages/jdtls/lombok.jar", -- Lombok boot classpath
+						"-Declipse.application=org.eclipse.jdt.ls.core.id1",
+						"-Dosgi.bundles.defaultStartLevel=4",
+						"-Declipse.product=org.eclipse.jdt.ls.core.product",
+						"-Dlog.level=ALL",
+						"-noverify",
+						"-jar",
+						"/home/juca/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar", -- Adjust to match the actual JAR file
+						"-configuration",
+						"/home/juca/.local/share/nvim/mason/packages/jdtls/config_linux", -- Adjust for OS
+						"-data",
+						workspace_folder,
+						-- "/home/juca/Documents/learn-spring/",
+						"--add-modules=ALL-SYSTEM",
+						"--add-opens",
+						"java.base/java.util=ALL-UNNAMED",
+						"--add-opens",
+						"java.base/java.lang=ALL-UNNAMED",
+					},
+					root_dir = function(fname)
+						return vim.fs.dirname(
+							vim.fs.find(
+								{ ".gradlew", ".git", "mvnw", "pom.xml", "build.gradle" },
+								{ upward = true, path = fname }
+							)[1]
+						)
+					end,
 				})
 			end,
 			["marksman"] = function()
