@@ -12,6 +12,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		vim.cmd("highlight Text guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight SignColumn guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight NonText guibg=NONE ctermbg=NONE")
+		vim.cmd("highlight NvimTreeWinSeparator guibg=none guifg=none")
+		vim.cmd("highlight NvimTreeNormal guibg=none guifg=none")
 	end,
 })
 
