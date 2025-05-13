@@ -7,6 +7,7 @@ opt.number = true
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+		vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight LineNr guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight CursorLineNR guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight Text guibg=NONE ctermbg=NONE")
